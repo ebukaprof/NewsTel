@@ -1,0 +1,716 @@
+﻿<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+    <head>
+        <script>
+        (function() {
+    if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+        var msViewportStyle = document.createElement("style");
+        msViewportStyle.appendChild(
+            document.createTextNode("@-ms-viewport{width:auto!important}")
+        );
+        document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+    }
+})();
+</script>
+
+        <title>New Telegraph</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" type="text/css" href="css/icons.css" />    
+ 
+       <!--   
+     <link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />
+  -->
+      <link rel="stylesheet" type="text/css" href="css/main.css"  />
+      <link rel="stylesheet" type="text/css" href="css/appframework.css"  />
+      <link rel="stylesheet" type="text/css" href="css/lists.css"  />
+      <link rel="stylesheet" type="text/css" href="css/forms.css"  />
+      <link rel="stylesheet" type="text/css" href="css/buttons.css"  />        
+      <link rel="stylesheet" type="text/css" href="css/badges.css"  />        
+      <link rel="stylesheet" type="text/css" href="css/grid.css"  />
+
+      <link rel="stylesheet" type="text/css" href="css/win8.css"  />
+        
+      <link rel="stylesheet" type="text/css" href="plugins/css/af.actionsheet.css"  />
+      <link rel="stylesheet" type="text/css" href="plugins/css/af.popup.css"  />
+      <link rel="stylesheet" type="text/css" href="plugins/css/af.scroller.css"  />
+      <link rel="stylesheet" type="text/css" href="plugins/css/af.selectBox.css"  />        
+        
+        <!-- uncomment for intel.xdk apps 
+        <script type="text/javascript" charset="utf-8" src="intelxdk.js"></script>
+        <script type="text/javascript" charset="utf-8" src="xhr.js"></script>
+        -->
+        <script type="text/javascript" charset="utf-8" src="./appframework.js"></script>
+        <!-- include af.desktopBrowsers.js on desktop browsers only -->
+        <script>
+
+            function loadedPanel(what) {
+                //We are going to set the badge as the number of li elements inside the target
+                $.ui.updateBadge("#aflink", $("#af").find("li").length);
+            }
+
+
+            function unloadedPanel(what) {
+                $.ui.hideMask();
+            }
+
+            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+                var script = document.createElement("script");
+                script.src = "plugins/af.desktopBrowsers.js";
+                var tag = $("head").append(script);
+                //$.os.desktop=true;
+            }
+
+          //  $.feat.nativeTouchScroll=true;
+          
+        </script>        
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.actionsheet.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.css3animate.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.passwordBox.js"></script>          
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.scroller.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.selectBox.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.touchEvents.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.touchLayer.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.popup.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/jq.template.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="./ui/appframework.ui.js"></script>
+        <!-- <script type="text/javascript" charset="utf-8" src="./ui/transitions/all.js"></script> -->
+        <script type="text/javascript" charset="utf-8" src="./ui/transitions/fade.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./ui/transitions/flip.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./ui/transitions/pop.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./ui/transitions/slide.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./ui/transitions/slideDown.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./ui/transitions/slideUp.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.slidemenu.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.8tiles.js"></script>
+
+        <!-- <script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="js/index.js"></script>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index2.js"></script>
+
+        <script type="text/javascript">
+            /* This function runs once the page is loaded, but intel.xdk is not yet active */
+            //$.ui.animateHeaders=false;
+             var search=document.location.search.toLowerCase().replace("?","");
+             //if(!search)
+            $.ui.useOSThemes=true;
+            $.ui.overlayStatusbar=true; // for ios7 only to add header padding to overlay the statusbar
+            if(search.length>0) //Android fix has too many buggy issues on iOS - can't preview with $.os.android
+            {
+
+               $.ui.useOSThemes=true;
+                if(search=="win8")
+                    $.os.ie=true;
+                $.ui.ready(function(){
+                    $("#afui").get(0).className=search;
+                });
+            }
+            
+            var webRoot = "./";
+            // $.os.android=true;
+            $.ui.autoLaunch = false;
+            $.ui.openLinksNewTab = false;
+            $.ui.splitview=false;
+            
+
+            $(document).ready(function(){
+                $.ui.launch();
+                $("#load_more_ul").hide();
+                $("#cat_refresh").hide();
+                load_app();
+                
+
+                $(".swipe_nav").bind("swipeRight", function () { $.ui.goBack(); })
+
+            });
+            
+            /* This code is used to run as soon as intel.xdk activates */
+            var onDeviceReady = function () {
+                $.ui.launch();
+                intel.xdk.device.setRotateOrientation("portrait");
+                intel.xdk.device.setAutoRotate(false);
+                webRoot = intel.xdk.webRoot + "";
+                //hide splash screen
+                intel.xdk.device.hideSplashScreen();
+                $.ui.blockPageScroll(); //block the page from scrolling at the header/footer
+            };
+            document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
+
+            function showHide(obj, objToHide) {
+                var el = $("#" + objToHide)[0];
+
+                if (obj.className == "expanded") {
+                    obj.className = "collapsed";
+                } else {
+                    obj.className = "expanded";
+                }
+                $(el).toggle();
+
+            }
+
+                       
+        </script>
+
+</head>
+
+    <body>
+        <div id="afui">
+            <!-- this is the splashscreen you see. -->
+            <div id="splashscreen" class='ui-loader heavy'>
+                New Telegraph
+                <br>
+                <br>    <span class='ui-icon ui-icon-loading spin'></span>
+                <h1>Loading..</h1>
+
+            </div>
+            <div id="header">
+                <a id='menubadge' onclick='af.ui.toggleSideMenu()' class='menuButton'></a>                 
+            </div>
+            <div id="content">
+
+                <div title='New Telegraph' id="main" class="panel" selected="true" data-load="loadedPanel" data-unload="unloadedPanel" data-tab="navbar_home">
+                    <header>
+                        <a id='menubadge' onclick='af.ui.toggleSideMenu()' class='menuButton'></a>
+                        <img src="img/logo.png" onclick='af.ui.toggleSideMenu()' />
+                        <img src="img/refresh.png" class="right" onclick="$.ui.scrollToTop('main',500);news.fetch('new');" />
+                        <img src="img/search.png" class="right" onclick="$.ui.loadContent('#search_result',false,false,'none');" />
+                    </header>
+
+
+
+                    <div class="swipe_navx">
+                        <div id="news_list_topstory">
+                            <div style="padding:30%; padding-top:40%; text-align:center;color:#fff; font-family:sans-serif">LOADING</div>
+                        </div>
+                        <div id="news_title"></div>
+
+                        <ul class="list newslist" id="news_list">
+                            <li></li>
+                        </ul>
+                    </div>
+
+                    <div class="clear"></div>
+                    <ul class="list newslist" style="margin:0 !IMPORTANT; padding:0 !IMPORTANT" id="load_more_ul" onclick="news.fetch('old');">
+                        <li class="loadmore" id="load_more_link">Load more</li>
+                    </ul>
+                </div>
+                
+
+
+
+                <div title='News' id="news_item" class="panel" data-load="" data-unload="unloadedPanel" data-nav="news_nav">
+                    <header>
+                        <a id="backButton" class='button' onclick="$.ui.goBack()">News..</a>
+
+                        <div class="comment" id="view_total_comments" onclick="$.ui.loadContent('#comments',false,false,'none');">0</div>
+                        
+                        <img src="img/share.png" class="right" onclick="showShare()" />
+                    </header>
+
+                    <div id="ad_newsview" class="ad_content"></div>
+                    <div id="main_news_body" class="body"></div>
+
+                    <div class="swipe_across">
+                        <img src="img/previous.png" class="prev" />
+                        <img src="img/next.png" class="next" />
+                        <div class="swipetext">swipe next &amp; previous</div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="similar" id="similar_stories">
+                        
+                    </div>
+
+                    <footer>
+                        <a href="#main" id='navbar_home' class='icon home'>Home</a>
+                    </footer>
+                </div>
+
+
+                
+                
+                <div title='Comments' id="comments" class="panel" style="padding:0" data-load="set_comment_title" data-unload="comment_unload" data-footer="comment_foot">
+
+                    <script>
+                        /*For each page the scripts running it will be placed inline. or whatever placing it here is called*/
+
+                        var last_comment_id = 0;
+                        function set_comment_title() {
+                            $("#load_more_comment_link").html("Load more");
+
+                            /*only reset these items if the comments are for a new news item*/
+                            if (last_comment_id != CURRENT_ITEM_ID) {
+                                $("#comment_title").html(CURRENT_ITEM_TITLE);
+                                comments.stop_id = "";
+                                comments.start_id = "";/**/
+
+                                comments.current_page = 1;
+
+                                allow_load_more_comment = true;
+                                comments.fetch(1, "new");
+
+                                last_comment_id = CURRENT_ITEM_ID;
+
+                                $("#load_more_comment_ul").hide();
+                            }
+
+                        }
+                        function comment_unload() {
+                            $.ui.hideMask();
+                        }
+
+                        var commentsScroller;
+                        var allow_load_more_comment = true;
+
+                        $.ui.ready(function () {
+
+                            var options = { verticalScroll: true, horizontalScroll: false, scrollBars: true, lockBounce: true }
+                            commentsScroller = $("#comments").scroller(options);
+                            commentsScroller.addInfinite();
+
+                            $.bind(commentsScroller, "infinite-scroll", function () {
+                                console.log("infinite triggered");
+
+                                if (allow_load_more_comment) {
+                                    allow_load_more_comment = false;
+                                    var self = this;
+                                    comments.current_page += 1;
+                                    comments.fetch(comments.current_page, "old");
+
+                                    //$(this.el).append("<div id='infinite' style='background:#eee;padding:10px;width:100%;'><span class=''>...</span></div>");
+                                    //$("#comments_list").append("<div id='infinite' style='background:#eee;padding:10px;width:100%;'><span class=''>Loading content...</span></div>");
+                                    $.bind(commentsScroller, "infinite-scroll-end", function () {
+                                        $.unbind(commentsScroller, "infinite-scroll-end");
+                                        setTimeout(function () {
+                                            //$(self.el).find("#infinite").remove();
+                                            self.clearInfinite();
+                                        }, 5000);
+                                    });
+                                }
+                            });
+
+                        });
+                    </script>
+
+                    <header>
+                        <a id="backButton" onclick="$.ui.goBack()" class='button'>Article..</a>
+                        <img src="img/new.png" class="right" onclick="$.ui.loadContent('#new_comment',false,false,'none');" />
+                        <!--<img src="img/refresh.png" class="right" onclick="comments.fetch(1,'new');" />-->
+                    </header>
+                    <div class="swipe_nav">
+                        <div id="ad_comment" class="ad_content"></div>
+
+                        <div class="pad">
+                            <h2 id="comment_title"></h2>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="similar">
+                            <div class="comment_count" id="display_comment_count">0</div>
+                            <h3>Comments on this item</h3>
+                            <div class="clear"></div>
+                        </div>
+
+                        <div id="comments_scroll">
+                            <div class="comment similar" id="comments_list"></div>
+                        </div>
+                        <div class="clear"></div>
+                        <ul class="list newslist" style="margin:0 !IMPORTANT; padding:0 !IMPORTANT; display:none" id="load_more_comment_ul" onclick="comments.current_page +=1; comments.fetch(comments.current_page,'old');">
+                            <li class="loadmore" id="load_more_comment_link">Load more</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                               
+
+                <div title='Comments' id="new_comment" class="panel" style="padding:0" data-load="show_comment_name" data-unload="unloadedPanel" data-footer="none">
+                    <header>
+                        <a id="backButton" onclick="$.ui.goBack()" class='button'>Comments..</a>
+                    </header>
+
+                    <script>
+                        function show_comment_name() {
+                            $("#comment_title_2").html(CURRENT_ITEM_TITLE);
+                        }
+                    </script>
+                    <div class="swipe_nav">
+                        <div class="pad">
+                            <h2 id="comment_title_2"></h2>
+                        </div>
+
+                        <div id="comment_form" class="pad">
+                            <input id="new_comment_name" type="text" placeholder="Your Name"><br />
+                            <input id="new_comment_email" type="text" placeholder="Your Email"><br />
+                            <textarea id="new_comment_text" rows="3" placeholder="Your comment"></textarea>
+
+                            <input type="button" class="button full_width redbg" value="Post" onclick="comments.post_comment();">
+                            <div class="clear"></div>
+                        </div>
+
+
+                        <div class="ad_content nobg" id="new_comment_ad"></div>
+                        
+                    </div>
+                </div>
+
+
+
+
+                <div title='Saved Items' id="saved_news_page" class="panel" style="padding:0" data-load="loaded_savednews" data-unload="unloadedPanel">
+                    <script>
+                        var is_savednews_loaded = false;
+                        function loaded_savednews() {
+                            if (!is_savednews_loaded) {
+                                saved_news.load();
+                            }
+                        }
+                    </script>
+                    <div class="swipe_nav">
+                        <ul class="list newslist" id="savednews_list"><li></li></ul>
+                    </div>
+                </div>
+
+
+                
+                
+                <div title="New Telegraph" id="page_view" class="panel" data-unload="page_unload" data-nav="none">
+                    <script>
+
+
+                        function page_unload() {
+                            $.ui.hideMask();
+                            //is_saved_loaded=0;
+                        }
+                    </script>
+
+
+                    <header>
+                        <a id="backButton" onclick="$.ui.goBack()">News</a>
+                        <h1 id="page_title">Item</h1>
+                    </header>
+                    <div class="swipe_nav">
+                        <div id="page_body">
+                            <div class="align_right pad greyline_bottom" onclick="if(confirm('Refresh content?')){page.fetch(page.current_title);}"><img src='img/refresh.png' align="absmiddle" /> Refresh Content</div>
+                            <div id="page_content" class="pad"></div>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <a href="#main" id='navbar_home' class='icon home'>Home</a>
+                    </footer>
+                </div>
+
+
+
+
+                <div title='' id="search_result" class="panel" style="padding:0" data-unload="unloadedPanel" data-footer="none">
+                    <script>
+
+                        $.ui.ready(function () {
+
+                            /*bind search forms to load on this page*/
+                            $("#generic_search_form").bind("submit", function (event) {
+                                var search_text = $("#generic_search_text").val();
+                                if (search_text) {
+                                    news.curr_search_page = 1;
+                                    news.searchnews(search_text);
+                                    //$.ui.scrollToTop('search_result',500);
+                                }
+                                event.preventDefault();
+                            });
+                        });
+                    </script>
+                    <div class="swipe_nav">
+                        <div class="upper_area_bg">
+                            <div class="bg">
+                                <h2 class="align_left pad">
+                                    <form id="generic_search_form">
+                                        <input type="search" placeholder="Search News" id="generic_search_text" class="icon magnifier" style="background:#000 !IMPORTANT; color:#ccc" />
+                                        <div class="clear"></div>
+                                    </form>
+                                </h2><br />
+                            </div>
+                        </div>
+
+                        <div id="ad_searchresult" class="ad_content"></div>
+                        <div class="message pad align_center"><h4 id='search_title'></h4></div>
+
+                        <div class="swipe_navx">
+                            <ul class="list newslist" id="search_result_list"><li></li></ul>
+                        </div>
+                        <div class="clear"></div>
+                        <ul class="list newslist" style="margin:0 !IMPORTANT; padding:0 !IMPORTANT; display:none" id="load_more_search_ul" onclick="news.curr_search_page +=1; news.searchnews();">
+                            <li class="loadmore" id="load_more_search_link">Load more</li>
+                        </ul>
+                     
+                    </div>
+                   </div>
+
+
+
+                
+                <div title='Settings' id="settings" class="panel" style="padding:10px !IMPORTANT" data-load="settings_load" data-unload="unloadedPanel">
+
+                    <script>
+                        var displayable_duration = 0;
+                        function settings_load() {
+                            /*loads the settinsg variables as saved in the database*/
+
+                            var objectStore = db.transaction("Settings").objectStore("Settings");
+
+
+                            objectStore.openCursor().onsuccess = function (event) {
+                                var cursor = event.target.result;
+                                if (cursor) {
+                                    ALERT_DURATION = cursor.value.alert_dur;
+                                    displayable_duration = ALERT_DURATION / 60000;
+
+                                    ALLOW_UPDATE = cursor.value.allow_update;
+                                    if (ALLOW_UPDATE == 1) {
+                                        document.getElementById("chk_check_for_updates").checked = true;
+                                    }
+
+                                    FONTSIZE = cursor.value.font_size;
+                                    $("#select_dur").val(displayable_duration);
+                                    $("#select_font").val(FONTSIZE);
+                                    /*create a select element to help change font size*/
+                                    /*
+                                    $("#select_dur option").each(function () {
+                                        if ($(this).val() == displayable_duration) {
+                                            $(this).attr("selected", true);
+                                        } else {
+                                            $(this).removeAttr("selected");
+                                        }
+                                    });
+       
+       
+                                    $("#select_font option").each(function () {
+                                        if ($(this).val() == FONTSIZE) {
+                                            $(this).attr("selected", true);
+                                        } else {
+                                            $(this).removeAttr("selected");
+                                        }
+                                    });*/
+
+                                    $('#alert_dur_display').html(displayable_duration);
+                                }
+                                else {
+                                }
+                            };
+                        }
+
+
+                        function update_settings(field, value) {
+                            if (field == "vibrate") {
+                                allow_vibrate = value;
+                                update_store("Settings", 1, "vibrate", value);
+                            }
+                            if (field == "sound") {
+                                allow_sound = value;
+                                update_store("Settings", 1, "sound", value);
+                            }
+
+                            if (field == "font_size") {
+                                FONTSIZE = value;
+                                $("#afui.win8").css("font-size", value + "em !IMPORTANT");
+                                if (value == "0.8") { $("div.panel").css("line-height", "1.1em"); }
+                                if (value == "1") { $("div.panel").css("line-height", "1.3em"); }
+                                if (value == "1.2") { $("div.panel").css("line-height", "1.4em"); }
+                                if (value == "1.4") {
+                                    $("div.panel").css("line-height", "1.7em");
+                                    $(".top_story .caption").css("line-height", "1.3em");
+                                }
+
+
+                                var FONTSIZE_str = "1em";
+                                if (FONTSIZE == "0.8") { FONTSIZE_str = "0.8em"; }
+                                if (FONTSIZE == "1") { FONTSIZE_str = "1.2em"; }
+                                if (FONTSIZE == "1.2") { FONTSIZE_str = "1.4em"; }
+                                if (FONTSIZE == "1.4") { FONTSIZE_str = "1.6em"; }
+
+                                $("#main_news_body div.content #item_story p").css("font-size", FONTSIZE + "em");
+                                //$("#main_news_body div.content #item_story p").css("line-height", FONTSIZE_str);
+
+
+                                update_store("Settings", 1, "font_size", value);
+                            }
+                            if (field == "alert_dur") {
+                                $('#alert_dur_display').html(value);
+                                value = value * 60000;
+                                ALERT_DURATION = value;
+                                update_store("Settings", 1, "alert_dur", value);
+
+                                /*reset the interval*/
+                                window.clearInterval(MY_INTERVAL);
+                                if (ALLOW_UPDATE == 1) {
+                                    MY_INTERVAL = window.setInterval(function () { try { news.auto_load(false); } catch (x) { navigator.notification.alert(x.message); } }, ALERT_DURATION);
+                                }
+                            }
+                            if (field == "allow_update") {
+                                /*reset the interval*/
+                                update_store("Settings", 1, "allow_update", value);
+
+                                ALLOW_UPDATE = value;
+                                if (ALLOW_UPDATE == 0) {
+                                    window.clearInterval(MY_INTERVAL);
+                                }
+                                else {
+                                    window.clearInterval(MY_INTERVAL);
+                                    MY_INTERVAL = window.setInterval(function () { try { news.auto_load(false); } catch (x) { navigator.notification.alert(x.message); } }, ALERT_DURATION);
+                                }
+                            }
+                        }
+
+                    </script>
+                    <ul class="list">
+                        <li>
+                            <input type="checkbox" id="chk_check_for_updates" value="check" onclick="if(this.checked){update_settings('allow_update', 1);}else{update_settings('allow_update', 0);}" style="display:inline-block !IMPORTANT; visibility:visible !IMPORTANT" align="absmiddle" /> Check for updates
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <!--<img src="img/refresh_b.png" width="22" align="absmiddle"> --> Check every :
+                            <select id="select_dur" onchange="update_settings('alert_dur', this.value);" style=" margin-left:5px; width:40% !IMPORTANT">
+                                <option value="10">10 minutes</option>
+                                <option value="30">30 minutes</option>
+                                <option value="60">1 hour</option>
+                                <option value="1440">24 hours</option>
+                            </select>
+                        </li>
+
+
+                        <li onclick="">
+                            <!--<img src="img/fontsize.png" align="absmiddle">  -->Font size : <select id="select_font" onchange="update_settings('font_size', this.value);" style=" margin-left:5px; width:40% !IMPORTANT">
+                                <option value="0.8" style="font-size:0.8em !IMPORTANT">small</option>
+                                <option value="1" style="font-size:1em !IMPORTANT">normal</option>
+                                <option value="1.2" style="font-size:1.2em !IMPORTANT">large</option>
+                                <option value="1.4" style="font-size:1.4em !IMPORTANT">largest</option>
+                            </select>
+                        </li>
+
+
+                        <li onclick="af.ui.toggleSideMenu(false); showShare('New Telegraph for Windows Phone 8 - Download on Windows Phone Store. Visit http://newtelegraphonline.com/ for more information');"><img src="img/share_b.png" align="absmiddle"> Share</li>
+
+
+                        <li class="red_area" onclick="reset_application();"> <img src="img/refresh.png" align="absmiddle"> Reset Application</li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+            <!-- ------------------------------------------ -->
+            <!-- navbar -->
+            
+            <div id="navbar">
+                <a href="#main/1/3" id='navbar_home' class='icon home'>Home</a>
+                <a href="javascript:void(0)" onclick="$.ui.loadContent('#main/1/3',false,false,'slide'); $.ui.scrollToTop('main',500);news.fetch('new');" id='navbar_js' class="icon refresh">Refresh</a>
+                <a href="#saved_news_page" id='navbar_ui' class="icon database">Saved</a>
+                <a href="#settings" id='navbar_plugins' class="icon settings">Settings</a>
+            </div>
+        
+            <footer id='comment_foot'>
+                <div class="foot_area" style="padding:10px 10px 0 10px" onclick="$.ui.scrollToTop('comments',500);"><img src="img/up.png" /></div>
+            </footer>
+            <header id="testheader">
+                <a class='backButton button'>Back</a>
+                <h1>Header</h1>
+                <a class="button icon settings" style="float:right">Button</a>
+            </header>
+            <!-- ------------------------------------------ -->
+            <nav>
+                <div class="ad_content" id="nav_ad"></div>
+                <ul class="list">
+                    <li class="category divider" style="border:none !IMPORTANT">Categories <img src="img/refresh.png" align="right" style="margin:5px; margin-right:10px" onclick="newscategory.refresh_list();" id="cat_refresh" /><div class="clear"></div></li>
+                </ul>
+                <ul class="list" id="newscategory_list"></ul>
+                <ul class="list" id="newscategory_list_more"></ul>
+                <ul class="list">                    
+                    <li class="divider">More</li>
+                     <!--<li style="font-size: 0.8em !IMPORTANT; padding: 0 !IMPORTANT; padding-left: 10px !IMPORTANT;" onclick="update_settings('font_size', '0.8');"><br /><div>small</div></li>
+                    <li style="font-size: 1em !IMPORTANT; padding: 0 !IMPORTANT; padding-left: 10px !IMPORTANT;" onclick="update_settings('font_size', '1');"><div>normal</div></li>
+                    <li style="font-size: 1.2em !IMPORTANT; padding: 0 !IMPORTANT; padding-left: 10px !IMPORTANT;" onclick="update_settings('font_size', '1.2');"><div>large</div></li>
+                    <li style="font-size: 1.4em !IMPORTANT; padding: 0 !IMPORTANT; padding-left: 10px !IMPORTANT;" onclick="update_settings('font_size', '1.4');"><div>largest</div></li>
+                    --><li class="category" onclick="$('#page_title').html('New Telegraph Newspapers');page.load('about');$.ui.loadContent('#page_view',false,false,'fade');"><img src="img/info.png" align="right" /> About New Telegraph</li>
+                </ul>
+            </nav>
+            <nav id="news_nav">
+                <ul class="list">
+                    <li class="divider">Font Size</li>
+    <li style="font-size: 0.8em !IMPORTANT; padding: 0 !IMPORTANT; padding-left: 10px !IMPORTANT;" onClick="update_settings('font_size', '0.8');"><br/><div>small</div></li>
+    <li style="font-size: 1em !IMPORTANT; padding: 0 !IMPORTANT; padding-left: 10px !IMPORTANT;" onClick="update_settings('font_size', '1');"><div>normal</div></li>
+    <li style="font-size: 1.2em !IMPORTANT; padding: 0 !IMPORTANT; padding-left: 10px !IMPORTANT;" onClick="update_settings('font_size', '1.2');"><div>large</div></li>
+    <li style="font-size: 1.4em !IMPORTANT; padding: 0 !IMPORTANT; padding-left: 10px !IMPORTANT;" onClick="update_settings('font_size', '1.4');"><div>largest</div></li>
+     <!---->
+                    <li class="divider">Article</li>
+                    <li id="news_save_button"></li>
+                    <li onclick="af.ui.toggleSideMenu(false);showShare()">Share</li>
+                    <li onclick="$.ui.loadContent('#comments', false, false, 'none');">Comment</li>
+                </ul>
+            </nav>
+            <aside title="Right">
+                <p>Powered by Nectar</p>
+            </aside>
+        </div>
+
+    </body>
+</html>
+
+<script type='text/html' id='tpl_top_story'>
+    <div class="top_story" id="top_story"
+        <%=navitem.instruction%>>
+        <div class="img"><img src="<%=navitem.large_img%>" /></div>
+        <div class="caption"><strong>Latest:</strong> <%=navitem.title%> </div>
+    </div>
+</script>
+
+<script type='text/html' id='tpl_items_list'>
+    <li
+        <%=navitem.instruction%> class="<%=navitem.catstr_lc%>">
+        <div class="img"><img src="<%=navitem.img%>" style="opacity:0;" onload="$(this).css('opacity','1');" /></div>
+        <div class="text">
+            <h3><%=navitem.title%></h3>
+            <div><span class="time"><%=navitem.date%></span> <br /> <span class="author"><%=navitem.author%></span></div>
+            <p><%=navitem.intro%>...</p>
+        </div>
+        <div class="clear"></div>
+    </li>
+</script>
+
+<script type='text/html' id='tpl_item_body'>
+    <div class="category"><h3><%=navitem.catstr%></h3><div class="clear"></div></div>
+    <div class="content">
+        <h2><%=navitem.title%></h2>
+        <div class="byline">
+            <span class="time"><%=navitem.date%></span> | <span class="author"><%=navitem.author%></span>
+        </div>
+
+        <div class="img"><img src='<%=navitem.large_img%>' /></div>
+        <div class="byline">
+            <span class="caption"><%=navitem.caption%></span>
+        </div>
+        <div class="details" id="item_story"><%=navitem.details%></div>
+    </div>
+</script>
+
+
+
+<script type='text/html' id='tpl_comments_list'>
+    <div class="story">
+        <div class="img"><img src="<%=navitem.imgurl%>" /></div>
+        <div class="text" style="color:#fff">
+            <span class='user'><%=navitem.author%>: </span><%=navitem.comment%>
+            <div class="time"><%=navitem.date%></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</script>

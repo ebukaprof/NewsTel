@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3677C1B7-D68B-4CF9-BF8A-E869D437A6DF}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.nectar.newtelegraph</RootNamespace>
+    <AssemblyName>com.nectar.newtelegraph</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>NewTelegraph.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>com.phonegap.helloworld.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <BackgroundAgentType />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="cordovalib\Commands\BaseCommand.cs" />
+    <Compile Include="cordovalib\JSON\JsonHelper.cs" />
+    <Compile Include="cordovalib\BrowserMouseHelper.cs" />
+    <Compile Include="cordovalib\CommandFactory.cs" />
+    <Compile Include="cordovalib\ConfigHandler.cs" />
+    <Compile Include="cordovalib\ConsoleHelper.cs" />
+    <Compile Include="cordovalib\CordovaCommandCall.cs" />
+    <Compile Include="cordovalib\CordovaView.xaml.cs">
+      <DependentUpon>CordovaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="cordovalib\IBrowserDecorator.cs" />
+    <Compile Include="cordovalib\ImageExifHelper.cs" />
+    <Compile Include="cordovalib\MimeTypeMapper.cs" />
+    <Compile Include="cordovalib\NativeExecution.cs" />
+    <Compile Include="cordovalib\OrientationHelper.cs" />
+    <Compile Include="cordovalib\PluginResult.cs" />
+    <Compile Include="cordovalib\ScriptCallback.cs" />
+    <Compile Include="cordovalib\XHRHelper.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="cordovalib\CordovaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Images\appbar.back.rest.png" />
+    <Content Include="Images\appbar.close.rest.png" />
+    <Content Include="Images\appbar.feature.video.rest.png" />
+    <Content Include="Images\appbar.next.rest.png" />
+    <Content Include="Images\appbar.save.rest.png" />
+    <Content Include="Images\appbar.stop.rest.png" />
+    <Content Include="www\css\main.css" />
+    <Content Include="www\ui\appframework.ui.js" />
+    <Content Include="www\ui\transitions\fade.js" />
+    <Content Include="www\ui\transitions\flip.js" />
+    <Content Include="www\ui\transitions\pop.js" />
+    <Content Include="www\ui\transitions\slide.js" />
+    <Content Include="www\ui\transitions\slideDown.js" />
+    <Content Include="www\ui\transitions\slideUp.js" />
+    <None Include="cordova\lib\build.js" />
+    <None Include="cordova\lib\clean.js" />
+    <None Include="cordova\lib\deploy.js" />
+    <None Include="cordova\lib\log.js" />
+    <None Include="cordova\lib\target-list.js" />
+    <None Include="cordova\build.bat" />
+    <None Include="cordova\clean.bat" />
+    <None Include="cordova\lib\install-device.bat" />
+    <None Include="cordova\lib\install-emulator.bat" />
+    <None Include="cordova\lib\list-devices.bat" />
+    <None Include="cordova\lib\list-emulator-images.bat" />
+    <None Include="cordova\lib\list-started-emulators.bat" />
+    <None Include="cordova\lib\start-emulator.bat" />
+    <None Include="cordova\log.bat" />
+    <None Include="cordova\run.bat" />
+    <None Include="cordova\version.bat" />
+    <None Include="NewTelegraph_2014_05_14_01_54_36.sap" />
+    <None Include="VERSION" />
+    <None Include="Properties\AppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="www\css\afui.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <ProjectExtensions />
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="www\appframework.js" />
+    <Content Include="www\appframework.min.js" />
+    <Content Include="www\config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\cordova.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\cordova_plugins.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\css\appframework.css" />
+    <Content Include="www\css\badges.css" />
+    <Content Include="www\css\buttons.css" />
+    <Content Include="www\css\docs.css" />
+    <Content Include="www\css\flex.css" />
+    <Content Include="www\css\forms.css" />
+    <Content Include="www\css\grid.css" />
+    <Content Include="www\css\icons.css" />
+    <Content Include="www\css\index.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\css\lists.css" />
+    <Content Include="www\css\win8.css" />
+    <Content Include="www\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="www\img\239.GIF" />
+    <Content Include="www\img\ad.jpg" />
+    <Resource Include="www\img\ajax-loader-bar.gif" />
+    <Content Include="www\img\comment.png" />
+    <Content Include="www\img\download.png" />
+    <Content Include="www\img\fd_blk.png" />
+    <Content Include="www\img\fontsize.png" />
+    <Content Include="www\img\icon.png" />
+    <Content Include="www\img\info.png" />
+    <Resource Include="www\img\loading.GIF" />
+    <Resource Include="www\img\loading1.gif" />
+    <Resource Include="www\img\loading_start.GIF" />
+    <Content Include="www\img\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\img\logo_fade.png" />
+    <Content Include="www\img\new.png" />
+    <Content Include="www\img\next.png" />
+    <Content Include="www\img\p12.jpg" />
+    <Content Include="www\img\p8.jpg" />
+    <Content Include="www\img\previous.png" />
+    <Content Include="www\img\refresh.png" />
+    <Content Include="www\img\refresh_b.png" />
+    <Content Include="www\img\save.png" />
+    <Content Include="www\img\saved.png" />
+    <Content Include="www\img\search.png" />
+    <Content Include="www\img\settings.png" />
+    <Content Include="www\img\share.png" />
+    <Content Include="www\img\share_b.png" />
+    <Content Include="www\img\sound_off.png" />
+    <Content Include="www\img\sound_on.png" />
+    <Content Include="www\img\up.png" />
+    <Content Include="www\img\user.png" />
+    <Content Include="www\img\vibrate.png" />
+    <Content Include="www\img\vibrate_off.png" />
+    <Content Include="www\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\jq.appframework.js" />
+    <Content Include="www\js\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\phonegap.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\plugins\af.8tiles.js" />
+    <Content Include="www\plugins\af.actionsheet.js" />
+    <Content Include="www\plugins\af.css3animate.js" />
+    <Content Include="www\plugins\af.desktopBrowsers.js" />
+    <Content Include="www\plugins\af.passwordBox.js" />
+    <Content Include="www\plugins\af.popup.js" />
+    <Content Include="www\plugins\af.scroller.js" />
+    <Content Include="www\plugins\af.scrollScreen.js" />
+    <Content Include="www\plugins\af.selectBox.js" />
+    <Content Include="www\plugins\af.slidemenu.js" />
+    <Content Include="www\plugins\af.touchEvents.js" />
+    <Content Include="www\plugins\af.touchLayer.js" />
+    <Content Include="www\plugins\css\accordion.css" />
+    <Content Include="www\plugins\css\af.accordion.css" />
+    <Content Include="www\plugins\css\af.actionsheet.css" />
+    <Content Include="www\plugins\css\af.popup.css" />
+    <Content Include="www\plugins\css\af.scroller.css" />
+    <Content Include="www\plugins\css\af.selectBox.css" />
+    <Content Include="www\plugins\css\tabs.css" />
+    <Content Include="www\plugins\jq.template.js" />
+    <Content Include="www\res\icon\windows-phone\icon-173-tile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\res\icon\windows-phone\icon-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\res\icon\windows-phone\icon-62-tile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\res\screen\windows-phone\screen-portrait.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\spec\helper.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\spec\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\spec\lib\jasmine-1.2.0\jasmine-html.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\spec\lib\jasmine-1.2.0\jasmine.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\spec\lib\jasmine-1.2.0\jasmine.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\spec\lib\jasmine-1.2.0\MIT.LICENSE" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www\spec.html" />
+  </ItemGroup>
+</Project>

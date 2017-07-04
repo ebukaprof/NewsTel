@@ -1,0 +1,5 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="com.nectar.newtelegraph" EntryPointType="com.phonegap.helloworld.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="com.nectar.newtelegraph" Source="com.nectar.newtelegraph.dll" />
+  </Deployment.Parts>
+</Deployment>
